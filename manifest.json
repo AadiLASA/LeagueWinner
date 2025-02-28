@@ -1,0 +1,41 @@
+{
+  "manifest_version": 1,
+  "type": "WebApp",
+  "meta": {
+    "name": "LoL CS Tracker",
+    "author": "YourName",
+    "version": "1.0.0",
+    "description": "An Overwolf app that calculates CS per minute in League of Legends.",
+    "icon": "icon.png"
+  },
+  "permissions": [
+    "games",
+    "game_events"
+  ],
+  "data": {
+    "start_window": "desktop",
+    "game_targeting": {
+      "game_ids": [5426]  
+    }
+  },
+  "windows": {
+    "desktop": {
+      "file": "index.html",
+      "transparent": false,
+      "resizable": true
+    },
+    "in_game": {
+      "file": "overlay.html",
+      "transparent": true,
+      "resizable": false,
+      "click_through": true,
+      "show_in_taskbar": false,
+      "block_topmost": false,
+      "keep_alive": true,
+      "override_display_bounds": "game"
+    }
+  },
+  "game_events": {
+    "league_of_legends": ["match_info", "game_info", "events"]
+  }
+}

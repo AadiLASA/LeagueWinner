@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends Overlay</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://cdn.wallpapersafari.com/40/94/8fbDOH.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .overlay-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 300px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #f0a500;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+        }
+
+        .header {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        .champion-section {
+            margin-bottom: 15px;
+        }
+
+        .champion-title {
+            font-size: 1.2em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .champion-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .champion-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid #ff8800;
+        }
+
+        .champion-stats {
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #ffdd77;
+        }
+
+        .footer a {
+            color: #ffcc33;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="header">League of Legends Overlay</div>
+
+        <div class="champion-section">
+            <div class="champion-title">Current Champion</div>
+            <div class="champion-info">
+                <img src="https://th.bing.com/th/id/OIP.LzZgjqn1V9aHNM5jOLpuSwHaI8?rs=1&pid=ImgDetMain" alt="Yone" class="champion-image">
+                <div class="champion-stats">
+                    <p><strong>Champion:</strong> Yone</p>
+                    <p><strong>Role:</strong> Mid</p>
+                    <p><strong>KDA:</strong> 5/2/8</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Designed for stream overlays | <a href="#">More Info</a>
+        </div>
+    </div>
+</body>
+</html>
