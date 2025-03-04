@@ -26,7 +26,7 @@ function updateChar(name){
 }
 //  cs/min calculator
 const cs=document.getElementById("cs");
-const name=document.getElementById("champion-name");
+
 
 overwolf.games.events.onNewEvents.addListener((event)=>{
     event.events.forEach(e=>{
