@@ -21,6 +21,8 @@ overwolf.games.events.onNewEvents.addListener((event)=> {
     });
 });
 
+
+
 function updateChar(name){
     document.getElementById("champion-name").innerHTML = `<i class="fas fa-dragon icon"></i> Champion: ${data.champion}`;
 }
@@ -36,6 +38,8 @@ overwolf.games.events.onNewEvents.addListener((event)=>{
         }
     });
 });
+
+
 
 
 overwolf.games.getRunningInfo((gameInfo) => {
