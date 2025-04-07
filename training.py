@@ -5,19 +5,22 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 
-# === 1. Load CSV ===
-df = pd.read_csv("TOTALmatchdata.csv")  # Replace with actual file name
 
-# === 2. Split features and label ===
+print("Loading CSV...")
+df = pd.read_csv("TOTALmatchdata.csv") 
+
+
 X = df.drop(columns=['label'])
-y = df['label']  # 1 = Blue win, 0 = Red win
+y = df['label']  
 
-# === 3. Train/test split ===
+
+print("Splitting data...")
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )
 
-# === 4. Train model ===
+print("Training data shape")
+
 model = XGBClassifier(
     use_label_encoder=False,
     eval_metric='logloss',
@@ -30,19 +33,20 @@ model = XGBClassifier(
 
 model.fit(X_train, y_train)
 
-# === 5. Evaluate ===
 y_pred = model.predict(X_test)
 acc = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {acc:.4f}")
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
 
-# === 6. Save model ===
 with open("xgboost_lol_model.pkl", "wb") as f:
     pickle.dump(model, f)
 
-print("✅ Model saved as 'xgboost_lol_model.pkl'")
+print("Model saved as 'xgboost_lol_model.pkl'")
 
-# === 7. Plot feature importances ===
+model.get_booster().save_model("model.json")
+print("Model saved as 'model.json'")
+
+
 plt.figure(figsize=(12, 6))
 plt.barh(X.columns, model.feature_importances_)
 plt.title("XGBoost Feature Importances")
